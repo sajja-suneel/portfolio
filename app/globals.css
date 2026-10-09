@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #FBF9F5;
+  --foreground: #18181B;
+  --card-bg: #FFFFFF;
+  --card-surface: #FFFFFF;
+  --card-border: #EAE4D8;
+  --muted-text: #71717A;
+  --accent-terracotta: #EA580C;
+  --accent-amber: #D97706;
+  --accent-warm: #F97316;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Editorial Serif typography for emphasis */
+.font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Custom Warm Craft scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FBF9F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDD5C7;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #EA580C;
+}
+
+/* Smooth selection */
+::selection {
+  background-color: #EA580C;
+  color: #FFFFFF;
+}
+
+/* Custom animations & keyframes */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Ambient warm paper dot texture */
+.paper-texture {
+  background-image: radial-gradient(rgba(234, 88, 12, 0.08) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Handcrafted Editorial Button Utilities */
+.btn-primary-crafted {
+  background: linear-gradient(135deg, #EA580C 0%, #D97706 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(234, 88, 12, 0.28);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-crafted:hover {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  box-shadow: 0 6px 24px rgba(234, 88, 12, 0.4);
+  transform: translateY(-1.5px);
+}
+
+.btn-secondary-crafted {
+  background: #FFFFFF;
+  border: 1px solid #E2DAC9;
+  color: #18181B;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-crafted:hover {
+  background: #F5F0E6;
+  border-color: #D5CBB8;
+  color: #09090B;
+  transform: translateY(-1px);
+}
+
+.card-crafted {
+  background: #FFFFFF;
+  border: 1px solid #EAE4D8;
+  box-shadow: 0 4px 20px rgba(24, 24, 27, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-crafted:hover {
+  border-color: #EA580C;
+  box-shadow: 0 8px 30px rgba(234, 88, 12, 0.12);
+}
